@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://repository.mcmaster.ca/schemas/macrepo/elements/1.0/">
+    <xs:annotation>
+        <xs:documentation xml:lang="en">
+            McMaster University Library Digital Repository additional metada elements http://repository.mcmaster.ca/schemas/macrepo/elements/1.0/ Created by Nick Ruest (ruestn@mcmaster.ca) This schema declares XML elements for McMaster University Library Digital Repository that are unique to the repository.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/03/xml.xsd"></xs:import>
+    <xs:complexType name="SimpleLiteral">
+        <xs:complexContent mixed="true">
+           <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:any processContents="lax" minOccurs="0" maxOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute ref="xml:lang" use="optional"/>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="any" type="SimpleLiteral" abstract="true"/>
+    <xs:element name="theme" substitutionGroup="any"/>
+    <xs:element name="era" substitutionGroup="any"/>
+    <xs:element name="boxNumber" substitutionGroup="any"/>
+    <xs:element name="envelopeNumber" substitutionGroup="any"/>
+    <xs:element name="editionNumber" substitutionGroup="any"/>
+    <xs:element name="mapSheetReference" substitutionGroup="any"/>
+    <xs:element name="oblique" substitutionGroup="any"/>
+    <xs:element name="subSeries" substitutionGroup="any"/>
+    <xs:element name="dateDigitized" substitutionGroup="any"/>
+    <xs:element name="preservationNotes" substitutionGroup="any"/>
+    <xs:element name="digitizationNotes" substitutionGroup="any"/>
+    <xs:element name="photoReference" substitutionGroup="any"/>
+    <xs:element name="fileNumber" substitutionGroup="any"/>
+    <xs:element name="bertrandRussellNumber" substitutionGroup="any"/>
+    <xs:element name="location" substitutionGroup="any"/>
+    <xs:element name="unit" substitutionGroup="any"/>
+    <xs:element name="biographicalNote" substitutionGroup="any"/>
+    <xs:element name="prisonerNumber" substitutionGroup="any"/>
+    <xs:element name="seriesName" substitutionGroup="any"/>
+    <xs:element name="seriesNumber" substitutionGroup="any"/>
+    <xs:element name="sheetNumber" substitutionGroup="any"/>
+    <xs:element name="mapID" substitutionGroup="any"/>
+    <xs:element name="distanceHorizontal" substitutionGroup="any"/>
+    <xs:element name="distanceVertical" substitutionGroup="any"/>
+    <xs:element name="sheetTitle" substitutionGroup="any"/>
+    <xs:element name="annotation" substitutionGroup="any"/>
+    <xs:element name="prisonerName" substitutionGroup="any"/>
+    <xs:element name="prisonBlock" substitutionGroup="any"/>
+    <xs:element name="subCamp" substitutionGroup="any"/>
+    <xs:element name="dateDisplay" substitutionGroup="any"/>
+    <xs:element name="taxonomyTerms" substitutionGroup="any"/>
+    <xs:element name="concentrationCamp" substitutionGroup="any"/>
+    <xs:element name="powCamp" substitutionGroup="any"/>
+    <xs:element name="gestapoCamp" substitutionGroup="any"/>
+    <xs:element name="internmentCamp" substitutionGroup="any"/>
+    <xs:element name="specialLabels" substitutionGroup="any"/>
+    <xs:element name="censor" substitutionGroup="any"/>
+    <xs:element name="specialCodes" substitutionGroup="any"/>
+    <xs:element name="postmark" substitutionGroup="any"/>
+    <xs:element name="sender" substitutionGroup="any"/>
+    <xs:element name="recipient" substitutionGroup="any"/>
+    <xs:element name="caseStudy" substitutionGroup="any"/>
+    <xs:element name="summary" substitutionGroup="any"/>
+    <xs:element name="transcript" substitutionGroup="any"/>
+    <xs:element name="translation" substitutionGroup="any"/>
+    <xs:element name="oldNid" substitutionGroup="any"/>
+    <xs:element name="dateBaseMap" substitutionGroup="any"/>
+    <xs:element name="baseMapProducer" substitutionGroup="any"/>
+    <xs:element name="dateOverPrint" substitutionGroup="any"/>
+    <xs:group name="elementsGroup">
+        <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="any"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+    <xs:complexType name="elementContainer">
+        <xs:choice>
+            <xs:group ref="elementsGroup"/>
+        </xs:choice>
+    </xs:complexType>
+</xs:schema>
